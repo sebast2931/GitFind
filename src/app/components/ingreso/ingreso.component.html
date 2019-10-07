@@ -1,0 +1,7 @@
+<div class="ingreso">
+    <div class="nombre form-group col-4">
+        <h1 align="center">GITFIND</h1>
+        <input [(ngModel)]="Nombre" ngModel #nomusr="ngModel" type="text" class="form-control form-control-md my-4" id="usr-nom" placeholder="Ingrese su nombre" required>
+        <button [disabled]="!nomusr.valid" (click)="ingresoUsuario();" type="button" class="btn btn-dark">Entrar</button>
+    </div>
+</div>

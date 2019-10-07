@@ -1,0 +1,12 @@
+{
+    "emptyTable": "No hay información para mostrar",
+    "info": "Registros _START_ al _END_ de _TOTAL_ registros",
+    "infoEmpty": "No hay información para mostrar",
+    "infoFiltered": "(filtrando de _MAX_ registros)",
+    "paginate": {
+        "first": "Primero",
+        "last": "Último",
+        "next": "Siguiente",
+        "previous": "Anterior"
+    }
+}

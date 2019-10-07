@@ -1,0 +1,38 @@
+@import '~../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+/* @import '~../../assets/fonts/Futura/Futura Bold font.ttf'; */
+
+.nad {
+    position: absolute;
+    top:5px;
+    left: 1100px;
+}
+
+.navbar {
+    background:#FAA3B5;
+    height: 60px;
+   
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+
+    
+    /*left: 900px;*/
+}
+
+.cards{
+    position: absolute;
+    top: 10px;
+    left: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+
+

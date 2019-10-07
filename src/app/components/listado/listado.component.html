@@ -1,0 +1,71 @@
+<nav class="navbar justify-content-between">
+    <div>
+        <p>¡Hola <strong style="color: darkorange">{{Nombre}}</strong>!! Bienvenido a GITFIND</p>
+    </div>
+    <div class=" nad navbar-brand">
+        <div class="container form-inline">
+            <input [(ngModel)]="Buscar" class="form-control mr-sm-1" type="search"
+                placeholder="Ingrese la palabra a buscar">
+            <button class="btn btn-light my-0 my-sm-0" type="submit" (click)="consultarAPI();">Buscar</button>
+        </div>
+    </div>
+</nav>
+
+<div class="row">
+    <div class="col-8 p-3">
+        <div class="cards row">
+            <div *ngFor="let i of Result | paginate: { itemsPerPage: 4, currentPage: P }">
+                <div class=" col-8 mx-2 my-4">
+                    <div class="col-6 offset-2 p-1">
+                        <div class="card" style="width: 20rem; height: 15rem;">
+                            <div class="card-body">
+                                <span class="font-weight-bolder">{{ i.name }} </span><br>
+                                <span>{{i.description}}</span><br>
+                                <span class="font-italic"><strong>Estrellas</strong> {{i.score}}</span><br>
+
+                            </div>
+                            <div class="card-body bg-secondary">
+                                <!-- <a href="{{i.clone_url}}" target="_blank" class="btn btn-primary" id="Vs">VISITAR
+                                    REPO</a> -->
+                                <button class=" btn btn-primary stretched-link mx-4"
+                                    (click)="Ruta(i.clone_url);">URL</button>
+
+                                <button class=" btn btn-primary stretched-link mx-4"
+                                    (click)="agregarFavorito(i.name,i.description,i.score);">Fav</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <pagination-controls (pageChange)="P = $event"></pagination-controls>
+        </div>
+
+    </div>
+
+    <!-- <div class="col-4" *ngIf="agregar">
+        <div class="cards row">
+            <div *ngFor="let i of JSONfavorito">
+                <div class=" col-8 mx-2 my-4">
+                    <div class="col-6 offset-2 p-1 ">
+                        <div class="card" style="width: 20rem; height: 15rem;">
+                            <div class="card-body">
+                                <span class="font-weight-bolder">{{i.Nombre}} </span><br>
+                                <span>{{i.Desc}}</span><br>
+                                <span class="font-italic">Estrellas {{i.Estrellas}}</span><br>
+                            </div>
+                            <div class="card-body bg-secondary">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                <button class=" btn btn-primary stretched-link mx-5"
+                                    (click)="construirJson();">Fav</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+<ngx-spinner bdOpacity=0.9 bdColor="rgba(106,106,106,0.36)" size="medium" color="#696767" type="ball-atom"
+    [fullScreen]="true"></ngx-spinner>
